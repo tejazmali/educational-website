@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Fundamental Academy</title>
+    <meta name="description" content="Contact Fundamental Academy for inquiries, feedback, or support.">
+    <meta name="keywords" content="contact us, Fundamental Academy, educational support, Surat, Dindoli">
+    <meta name="author" content="Tejas Mali">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1C1C21">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/Images/logo-new.png" type="image/x-icon">
+</head>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Fundamental Academy",
+        "url": "https://fundamentalacademy.in",
+        "logo": "https://fundamentalacademy.in/Images/logo-new.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+917982525608",
+            "contactType": "Customer Support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/fundamentalacademy",
+            "https://twitter.com/fundamental_academy",
+            "https://www.instagram.com/fundamental_academy/"
+        ]
+    }
+    </script>
+<body id="content">
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+            -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+            outline: none !important;
+        }
+    </style>
+    <!-- Loading Screen -->
+    <div class="redirect-loader" id="redirect-loader"></div>
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+
+    <div id="header"></div>
+
+    <div id="Contact-us" class="contact-container">
+        <div class="contact-form">
+            <h2>Contact us</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="c7500726-67fd-4fd2-b89f-1809b3dbc597">
+            
+                <!-- Form Inputs. Each input must have a name="" attribute -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+            
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+                <!-- Custom Confirmation / Success Page -->
+                <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+            
+                <button type="submit">Submit</button>
+            </form>
+            <div id="form-alert" class="alert" style="display: none;"></div>
+        </div>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9985552591993!2d72.87574027471769!3d21.152455783519642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051bbd72e0fc7%3A0xf59a1e5cf52eb49f!2sFundamental%20academy!5e0!3m2!1sen!2sin!4v1720078693790!5m2!1sen!2sin"
+                width="99%" height="300" style="border: 0px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-info">
+            <h3>Visit us</h3>
+            <p>Shop No 10&11, Ayodhya Nagri Rd, nr. Vedant Vidhyapith, Royal Star Town ship, Dindoli, Surat, Gujarat 394210</p>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showAlert('Thank you for contacting us! 😄', 'success');
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (data && data.errors) {
+                            showAlert(data.errors.map(error => error.message).join(", "), 'error');
+                        } else {
+                            showAlert('Oops! There was a problem submitting your form. 😵‍💫', 'error');
+                        }
+                    });
+                }
+            }).catch(error => {
+                showAlert('Oops! There was a problem submitting your form.', 'error');
+            });
+        });
+
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('form-alert');
+            alertBox.textContent = message;
+            alertBox.className = `alert ${type}`;
+            alertBox.style.display = 'block';
+        }
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal">
+    </script>
+    <script>
+        // Initializing ScrollReveal
+        ScrollReveal().reveal('.reveal', {
+            duration: 1000,
+            distance: '50px',
+            easing: 'ease-in-out',
+            origin: 'bottom',
+            reset: true
+        });
+    </script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

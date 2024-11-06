@@ -1,0 +1,350 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #1C1C21;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  
+  head {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin: 10% auto 0;
+    -webkit-animation: shvr 0.2s infinite;
+    animation: shvr 0.2s infinite;
+    margin-top: 200px;
+  }
+  head::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #000;
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    border-radius: 50%;
+    box-shadow: 125px 0 0 #000;
+    -webkit-animation: eye 2.5s infinite;
+    animation: eye 2.5s infinite;
+  }
+  
+  meta {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    width: 75px;
+    height: 80px;
+    border-radius: 50% 50% 50% 50%/45px 45px 45% 45%;
+    transform: rotate(45deg);
+  }
+  meta::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #fff;
+    width: 70px;
+    height: 50px;
+    left: 0px;
+    bottom: -10px;
+    border-radius: 50%;
+  }
+  meta::before {
+    bottom: auto;
+    top: -100px;
+    transform: rotate(45deg);
+    left: 0;
+  }
+  meta:nth-of-type(2) {
+    float: right;
+    transform: rotate(-45deg);
+  }
+  meta:nth-of-type(2)::after {
+    left: 5px;
+  }
+  meta:nth-of-type(3) {
+    display: none;
+  }
+  
+  body {
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+  }
+  body::before {
+    content: '404';
+    font-size: 80px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+  }
+  body::after {
+    content: 'Got lost? How.....?  why.....?  Ahhhh....';
+    color: #1EA7AB;
+    width: 120px;
+    font-size: 30px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-animation: text-show 2s infinite steps(3);
+    animation: text-show 2s infinite steps(3);
+  }
+  @-webkit-keyframes eye {
+    0% ,30% , 55%, 90% , 100% {
+      transform: translate(0, 0);
+    }
+    10%, 25% {
+      transform: translate(0, 20px);
+    }
+    65% {
+      transform: translate(-20px, 0);
+    }
+    80% {
+      transform: translate(20px, 0);
+    }
+  }
+  @keyframes eye {
+    0% ,30% , 55%, 90% , 100% {
+      transform: translate(0, 0);
+    }
+    10%, 25% {
+      transform: translate(0, 20px);
+    }
+    65% {
+      transform: translate(-20px, 0);
+    }
+    80% {
+      transform: translate(20px, 0);
+    }
+  }
+  @-webkit-keyframes shvr {
+    0% {
+      transform: translate(1px, 1em);
+    }
+    50% {
+      transform: translate(0, 1em);
+    }
+    100% {
+      transform: translate(-1px, 1em);
+    }
+  }
+  @keyframes shvr {
+    0% {
+      transform: translate(1px, 1em);
+    }
+    50% {
+      transform: translate(0, 1em);
+    }
+    100% {
+      transform: translate(-1px, 1em);
+    }
+  }
+  @-webkit-keyframes text-show {
+    to {
+      text-indent: -373px;
+    }
+  }
+  @keyframes text-show {
+    to {
+      text-indent: -373px;
+    }
+  }
+
+  .header {
+    background-color: #131316;
+    border-bottom: px solid #212020;
+    padding: 10px 0;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    background-color: rgba(19, 19, 22, 0.8);
+    backdrop-filter: blur(10px);
+    top: 0;
+    margin-left: -10px;
+  
+  
+  
+  }
+  .logo-img{
+  height: 100px;
+  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-align: start;
+   
+   
+  
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Navigation menu styles */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Adjust this value based on menu width */
+    width: 250px;
+    /* Adjust this value based on menu width */
+    height: 100vh;
+    /* Add background color */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    /* Adjust shadow */
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    /* Ensure menu is on top */
+  }
+  
+  /* Styles for the nav when open */
+  .nav.open {
+    left: 0;
+  }
+  
+  /* Unordered list styles */
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* List item styles */
+  .nav ul li {
+    margin-bottom: 20px;
+  }
+  
+  /* Anchor styles */
+  .nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 18px;
+  }
+  
+  /* Hover effect on anchors */
+  .nav ul li a:hover {
+    background-color: #dddddd;
+    color: #000000;
+    transition-duration: 0.20s;
+  }
+  
+  /* Active link styles */
+  .nav ul li a:active {
+    background-color: #656565;
+  }
+  
+  /* Menu toggle button styles */
+  .menu-toggle {
+    position: fixed;
+    top: 14px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1001;
+    /* Ensure button is above the menu */
+  
+  }
+  
+  /* Initial icon (hamburger) */
+  .menu-toggle::before {
+    content: '\2630';
+    /* Unicode for hamburger icon */
+    font-size: 30px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+  
+  }
+  
+  /* Change icon when open */
+  .menu-toggle.open::before {
+    content: '\2715';
+    /* Unicode for cross icon */
+  
+  }
+  
+  
+  
+  
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .nav {
+      left: -250px;
+      /* Adjust this value based on menu width */
+      backdrop-filter: blur(100px);
+      background-color: rgba(19, 19, 22, 0.8);
+  
+    }
+  
+    .nav.open {
+      left: 0;
+    }
+  
+  
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 769px) {
+    .nav {
+      position: static;
+      width: auto;
+      height: auto;
+      box-shadow: none;
+      display: flex;
+    }
+  
+    .menu-toggle {
+      visibility: hidden;
+    }
+  
+    .nav ul {
+      display: flex;
+      gap: 20px;
+    }
+  
+    .nav ul li {
+  
+      margin: 0px;
+      margin-bottom: -5px;
+  
+  
+  
+    }
+  
+    .nav ul li a {
+      display: inline-block;
+  
+    }
+}
+
+
