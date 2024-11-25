@@ -28,7 +28,7 @@ function getFestivalGreeting() {
         return { greeting: "Happy Ganesh Chaturthi!", message: "Wishing you success and prosperity." };
     } else if (month === 9 && day === 2) { // Navratri (October 2, 2024)
         return { greeting: "Happy Navratri!", message: "May the divine energies guide you." };
-    } else if (month === 10 && day === 25) { // Dussehra (October 25, 2024)
+    } else if (month === 9 && day === 25) { // Dussehra (October 25, 2024)
         return { greeting: "Happy Dussehra!", message: "Victory of good over evil!" };
     } else if (month === 11 && day === 25) { // Christmas (December 25)
         return { greeting: "Merry Christmas!", message: "Wishing you peace, joy, and love this season." };
