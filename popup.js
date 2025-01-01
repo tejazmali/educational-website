@@ -3,7 +3,6 @@ function getFestivalGreeting() {
     const date = new Date();
     const month = date.getMonth(); // 0-11
     const day = date.getDate(); // 1-31
-    const year = date.getFullYear(); // Get the current year
 
     // Define a list of festivals with their dates for 2025
     const festivals = [
@@ -30,17 +29,14 @@ function getFestivalGreeting() {
     ];
 
     // Find the festival matching the current date
-    const festival = festivals.find(f => f.month === month && f.day === day);
-
-    // Return the festival greeting if found, or a default greeting
-    return festival || { greeting: "Welcome!" };
+    return festivals.find(f => f.month === month && f.day === day) || null;
 }
 
 // Create a function to show the pop-up
 function showPopup() {
     const festival = getFestivalGreeting(); // Get the greeting based on the date
 
-    if (festival) { // Show pop-up only if there's a greeting
+    if (festival) { // Show pop-up only if there's a festival
         const popupOverlay = document.createElement('div');
         popupOverlay.id = 'popup';
         popupOverlay.style.opacity = '0'; // Start with opacity 0 for fade-in effect
