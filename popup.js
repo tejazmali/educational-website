@@ -5,54 +5,35 @@ function getFestivalGreeting() {
     const day = date.getDate(); // 1-31
     const year = date.getFullYear(); // Get the current year
 
-    // Simple festival greeting logic based on month and date
-    if (month === 10 && day === 1) { // Diwali (October 27, 2024)
-        return { greeting: "Happy Diwali!", message: "May this Diwali illuminate your life with joy and happiness." };
-    } else if (month === 11 && day === 14) { // Eid (varies)
-        return { greeting: "Eid Mubarak!", message: "Wishing you a blessed Eid filled with peace and joy." };
-    } else if (month === 0 && day === 26) { // Republic Day (January 26)
-        return { greeting: "Happy Republic Day!", message: "Celebrate the spirit of India!" };
-    } else if (month === 0 && day === 15) { // Pongal / Makar Sankranti (January 15)
-        return { greeting: "Happy Pongal!", message: "Wishing you a bountiful harvest!" };
-    } else if (month === 1 && day === 14) { // Makar Sankranti (January 14, sometimes)
-        return { greeting: "Happy Makar Sankranti!", message: "May your life be filled with happiness and abundance." };
-    } else if (month === 2 && day === 8) { // Holi (March 8, 2024)
-        return { greeting: "Happy Holi!", message: "Let the colors of Holi brighten your life!" };
-    } else if (month === 4 && day === 15) { // Eid ul-Fitr (varies)
-        return { greeting: "Eid ul-Fitr Mubarak!", message: "Celebrate the joy of togetherness." };
-    } else if (month === 7 && day === 15) { // Raksha Bandhan (August 15, 2024)
-        return { greeting: "Happy Raksha Bandhan!", message: "Cherish the bond of love and protection." };
-    } else if (month === 7 && day === 22) { // Janmashtami (August 22, 2024)
-        return { greeting: "Happy Janmashtami!", message: "May Lord Krishna bless you with joy." };
-    } else if (month === 8 && day === 2) { // Ganesh Chaturthi (September 2, 2024)
-        return { greeting: "Happy Ganesh Chaturthi!", message: "Wishing you success and prosperity." };
-    } else if (month === 9 && day === 2) { // Navratri (October 2, 2024)
-        return { greeting: "Happy Navratri!", message: "May the divine energies guide you." };
-    } else if (month === 9 && day === 25) { // Dussehra (October 25, 2024)
-        return { greeting: "Happy Dussehra!", message: "Victory of good over evil!" };
-    } else if (month === 11 && day === 25) { // Christmas (December 25)
-        return { greeting: "Merry Christmas!", message: "Wishing you peace, joy, and love this season." };
-    } else if (month === 0 && day === 12) { // National Youth Day (January 12)
-        return { greeting: "Happy National Youth Day!", message: "Empowering the youth for a brighter future." };
-    } else if (month === 1 && day === 30) { // Martyrs' Day (January 30)
-        return { greeting: "Remembering Martyrs' Day!", message: "Honoring those who sacrificed for our freedom." };
-    } else if (month === 3 && day === 21) { // World Poetry Day (March 21)
-        return { greeting: "Happy World Poetry Day!", message: "Celebrate the art of words and expression." };
-    } else if (month === 4 && day === 1) { // April Fool's Day (April 1)
-        return { greeting: "Happy April Fool's Day!", message: "May your day be filled with laughter!" };
-    } else if (month === 7 && day === 5) { // Teacher's Day (September 5)
-        return { greeting: "Happy Teacher's Day!", message: "Thank you for guiding us!" };
-    } else if (month === 8 && day === 15) { // Independence Day (August 15)
-        return { greeting: "Happy Independence Day!", message: "Celebrating our freedom and unity!" };
-    } else if (month === 9 && day === 19) { // Mahatma Gandhi Jayanti (October 2)
-        return { greeting: "Happy Mahatma Gandhi Jayanti!", message: "Remembering the father of the nation." };
-    } else if (month === 10 && day === 14) { // Karva Chauth (October 14, 2024)
-        return { greeting: "Happy Karva Chauth!", message: "Wishing you a happy and prosperous marriage." };
-    } else if (month === 11 && day === 26) { // Constitution Day (November 26)
-        return { greeting: "Happy Constitution Day!", message: "Celebrating the spirit of our Constitution." };
-    } else {
-        return { greeting: "welcome" };
-    }
+    // Define a list of festivals with their dates for 2025
+    const festivals = [
+        { month: 0, day: 12, greeting: "Happy National Youth Day!", message: "Empowering the youth for a brighter future." },
+        { month: 0, day: 15, greeting: "Happy Pongal!", message: "Wishing you a bountiful harvest!" },
+        { month: 0, day: 26, greeting: "Happy Republic Day!", message: "Celebrate the spirit of India!" },
+        { month: 1, day: 14, greeting: "Happy Makar Sankranti!", message: "May your life be filled with happiness and abundance." },
+        { month: 1, day: 30, greeting: "Remembering Martyrs' Day!", message: "Honoring those who sacrificed for our freedom." },
+        { month: 2, day: 17, greeting: "Happy Holi!", message: "Let the colors of Holi brighten your life!" },
+        { month: 3, day: 21, greeting: "Happy World Poetry Day!", message: "Celebrate the art of words and expression." },
+        { month: 4, day: 1, greeting: "Happy April Fool's Day!", message: "May your day be filled with laughter!" },
+        { month: 4, day: 30, greeting: "Eid ul-Fitr Mubarak!", message: "Celebrate the joy of togetherness." },
+        { month: 7, day: 5, greeting: "Happy Raksha Bandhan!", message: "Cherish the bond of love and protection." },
+        { month: 7, day: 11, greeting: "Happy Janmashtami!", message: "May Lord Krishna bless you with joy." },
+        { month: 8, day: 15, greeting: "Happy Independence Day!", message: "Celebrating our freedom and unity!" },
+        { month: 8, day: 21, greeting: "Happy Ganesh Chaturthi!", message: "Wishing you success and prosperity." },
+        { month: 8, day: 29, greeting: "Happy Navratri!", message: "May the divine energies guide you." },
+        { month: 9, day: 2, greeting: "Happy Mahatma Gandhi Jayanti!", message: "Remembering the father of the nation." },
+        { month: 9, day: 9, greeting: "Happy Dussehra!", message: "Victory of good over evil!" },
+        { month: 10, day: 4, greeting: "Happy Karva Chauth!", message: "Wishing you a happy and prosperous marriage." },
+        { month: 10, day: 21, greeting: "Happy Diwali!", message: "May this Diwali illuminate your life with joy and happiness." },
+        { month: 11, day: 25, greeting: "Merry Christmas!", message: "Wishing you peace, joy, and love this season." },
+        { month: 11, day: 26, greeting: "Happy Constitution Day!", message: "Celebrating the spirit of our Constitution." },
+    ];
+
+    // Find the festival matching the current date
+    const festival = festivals.find(f => f.month === month && f.day === day);
+
+    // Return the festival greeting if found, or a default greeting
+    return festival || { greeting: "Welcome!" };
 }
 
 // Create a function to show the pop-up
