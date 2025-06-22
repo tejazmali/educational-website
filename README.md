@@ -24,7 +24,7 @@ An innovative platform designed to provide students with comprehensive study mat
 
 ---
 ## Demo
-[Live Demo](https://fundamentalacademy.in/)
+[Live Demo](https://fundamental-academy.web.app/)
 
 
 
